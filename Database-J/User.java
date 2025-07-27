@@ -16,13 +16,16 @@ public class User {
         return Balance;
     }
 
-    public void Transaction(int price) {
+    public void Transaction(int price,int salary) {
         if (price <= Balance) {
             Balance -= price;
             System.out.println("Transaction successful! New balance: " + Balance);
         } else {
             System.out.println("Insufficient balance for this transaction.");
         }
-
+        if (salary > 0) {
+            Balance += salary;
+            System.out.println("Salary added! New balance: " + Balance);
+        }
     }
 }
